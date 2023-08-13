@@ -1,0 +1,15 @@
+<section class="section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ngx-slick-carousel class="no-arrow" #slickModal="slick-carousel" [config]="logoSliderConfig">
+                    <div ngxSlickItem *ngFor="let data of logos">
+                        <div class="logo-block">
+                            <img [src]="data.imagePath" alt="logo image">
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,160 @@
+<!-- <p>{{'topbar-title' | translate}}</p>
+<p>{{'call-us' | translate}}</p>
+
+<ul>
+  <li (click)="changeLang('en')" >English</li>
+  <li (click)="changeLang('hi')" >Hindi</li>
+</ul> -->
+
+<!-- 
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let student of Students">
+    <h1>{{student.name}}</h1>
+    <br />
+    <img width="200px" height="200px" [src]="student.image" />
+  </div>
+</ngx-slick-carousel>
+
+
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <div ngxSlickItem>
+    1
+  </div>
+  <div ngxSlickItem>
+    2
+  </div>
+  <div ngxSlickItem>
+    3
+  </div>
+  <div ngxSlickItem>
+    4
+  </div>
+  <div ngxSlickItem>
+    5
+  </div>
+  <div ngxSlickItem>
+    6
+  </div>
+  <div ngxSlickItem>
+    7
+  </div>
+  <div ngxSlickItem>
+    8
+  </div>
+  <div ngxSlickItem>
+    9
+  </div>
+</ngx-slick-carousel> -->
+
+
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let student of Students">
+    <h1>{{student.name}}</h1>
+    <br />
+    <img width="200px" height="200px" [src]="student.image" />
+  </div>
+</ngx-slick-carousel>
+
+
+
+
+=====================================
+
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'customerportal';
+
+
+  //https://github.com/kenwheeler/slick
+  //https://kenwheeler.github.io/slick/
+
+  // constructor(private _translate: TranslateService) {
+  //   _translate.addLangs(['en', 'hi']);
+  //   _translate.setDefaultLang('en');
+
+  // }
+
+  // changeLang(language: string) {
+  //   this._translate.use(language);
+  // }
+
+  Students = [
+    {
+      name: "A",
+      image: "assets/images/demo/1.jpg"
+    },
+    {
+      name: "B",
+      image: "assets/images/demo/2.jpg"
+    },
+    {
+      name: "C",
+      image: "assets/images/demo/3.jpg"
+    },
+    {
+      name: "D",
+      image: "assets/images/demo/4.jpg"
+    },
+    {
+      name: "E",
+      image: "assets/images/demo/5.jpg"
+    },
+    {
+      name: "F",
+      image: "assets/images/demo/6.jpg"
+    },
+    {
+      name: "G",
+      image: "assets/images/demo/7.jpg"
+    },
+    {
+      name: "H",
+      image: "assets/images/demo/8.jpg"
+    },
+    {
+      name: "I",
+      image: "assets/images/demo/9.jpg"
+    }
+  ];
+
+  // slideConfig = {
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 3,
+  //   dots : true,
+  //   autoplay : true
+  // };
+
+
+  slideConfig = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    dots : true,
+    autoplay : true,
+    responsive : [
+      {
+        breakpoint : 900,
+        settings : {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint : 600,
+        settings : {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
+}
